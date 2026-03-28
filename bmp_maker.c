@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #define _width 20
 #define _height 20
@@ -13,40 +14,40 @@
 
 typedef struct Pixel
 {
- unsigned char red;
- unsigned char green;
- unsigned char blue;
- unsigned char reserved;
+ uint8_t red;
+ uint8_t green;
+ uint8_t blue;
+ uint8_t reserved;
 } Pixel;
 
 
 typedef struct Header
 {
-    char signature[2];
-    int file_size;
-    int reserved;
-    int data_offset;
+    uint8_t signature[2];
+    uint32_t file_size;
+    uint32_t reserved;
+    uint32_t data_offset;
 } Header;
 
 typedef struct InfoHeader
 {
-  int size;
-  int width;
-  int height;
-  short planes;
-  short bitCount;
-  int Compression;
-  int imageSize;
-  int xPixelsPerM;
-  int yPixelsPerM;
-  int colorsUsed;
-  int colorsImportant;
+  uint32_t size;
+  uint32_t width;
+  uint32_t height;
+  uint16_t planes;
+  uint16_t bitCount;
+  uint32_t Compression;
+  uint32_t imageSize;
+  uint32_t xPixelsPerM;
+  uint32_t yPixelsPerM;
+  uint32_t colorsUsed;
+  uint32_t colorsImportant;
 } InfoHeader;
 
 
-int main()
+uint32_t main()
 {
-    char* buffer=(void*)malloc(_file_size);
+    uint8_t* buffer=(void*)malloc(_file_size);
     Header* h=(Header*)&buffer[0];
     InfoHeader* ih= (InfoHeader*)&buffer[14];
     Pixel* colourTable=(Pixel*)&buffer[54];
