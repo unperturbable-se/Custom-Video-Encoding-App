@@ -45,7 +45,7 @@ typedef struct InfoHeader
 } InfoHeader;
 
 
-uint32_t main()
+int main()
 {
     uint8_t* buffer=(void*)malloc(_file_size);
     Header* h=(Header*)&buffer[0];
