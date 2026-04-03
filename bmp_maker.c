@@ -11,6 +11,7 @@
 #define _height 20
 #define _img_size _width*_height
 #define _file_size 54+4*_img_size
+#pragma pack(1)
 
 typedef struct Pixel
 {
@@ -44,7 +45,7 @@ typedef struct InfoHeader
   uint32_t colorsImportant;
 } InfoHeader;
 
-
+void SaveFile(void* buffer,int bufferSize,char* fileName);
 int main()
 {
     uint8_t* buffer=(void*)malloc(_file_size);
@@ -55,31 +56,34 @@ int main()
     (h->signature)[0]='B';
     (h->signature)[1]='M';
     (h->file_size)=_file_size;
-    (h->data_offset)=0; //placeholder
+    (h->data_offset)=sizeof(Header)+sizeof(InfoHeader); //placeholder
 
-    (ih->size)= _img_size;
+    (ih->size)= sizeof(InfoHeader);
     (ih->width)=_width;
     (ih->height)=_height;
     (ih->planes)=1;
     (ih->bitCount)=24; //bits per pixel
     (ih->Compression)=0;
-    (ih->imageSize)=0;
+    (ih->imageSize)=_img_size;
     (ih->xPixelsPerM)=_width;
     (ih->yPixelsPerM)=_height;
-    (ih->colorsUsed)=0; //placeholder
+    (ih->colorsUsed)=255; //p
     (ih->colorsImportant)=0;
     /////////////////////////////////////
+    for(int i=0;i<_img_size;i++)
+    {
+        colourTable[i].red=255;
+        colourTable[i].green=0;
+        colourTable[i].blue=0;
+        colourTable[i].reserved=0;
+    }
     SaveFile(buffer,_file_size,"0.bmp");
 }
 
 
-
-
-
-int SaveFile(void* buffer,int bufferSize,char* fileName)
+void SaveFile(void* buffer,int bufferSize,char* fileName)
 {
     int file=open(fileName,O_WRONLY|O_CREAT,0666);
     write(file,buffer,bufferSize);
     close(file);
-    return 0;
 }
