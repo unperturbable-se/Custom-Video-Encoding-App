@@ -28,5 +28,6 @@ make test
 ```
 You can also test the BMP tester code by running:
 
-bash
+```bash
 make bmp
+```
