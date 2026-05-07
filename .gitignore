@@ -2,3 +2,5 @@
 .vscode
 imgui.ini
 build
+bmp_maker
+*.bmp
