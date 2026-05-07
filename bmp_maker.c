@@ -1,24 +1,22 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/types.h>
 #include <string.h>
-#include <stdio.h>
 #include <fcntl.h>
-#include <stdlib.h>
 #include <stdint.h>
+#include <stdlib.h>
 
-#define _width 20
-#define _height 20
+#define _width 100
+#define _height 100
 #define _img_size _width*_height
 #define _file_size 54+4*_img_size
 #pragma pack(1)
 
 typedef struct Pixel
 {
- uint8_t red;
- uint8_t green;
  uint8_t blue;
- uint8_t reserved;
+ uint8_t green;
+ uint8_t red;
+ //uint8_t reserved;
 } Pixel;
 
 
@@ -46,6 +44,8 @@ typedef struct InfoHeader
 } InfoHeader;
 
 void SaveFile(void* buffer,int bufferSize,char* fileName);
+void makeCircle(Pixel* colourTable,int radius);
+
 int main()
 {
     uint8_t* buffer=(void*)malloc(_file_size);
@@ -70,16 +70,40 @@ int main()
     (ih->colorsUsed)=255; //p
     (ih->colorsImportant)=0;
     /////////////////////////////////////
-    for(int i=0;i<_img_size;i++)
+    int radius=0;
+    while(1)
     {
-        colourTable[i].red=255;
-        colourTable[i].green=0;
-        colourTable[i].blue=0;
-        colourTable[i].reserved=0;
+      makeCircle(colourTable,radius);    
+      SaveFile(buffer,_file_size,"0.bmp");
+      radius+=5;
+      radius%=100;
+      sleep(1);
     }
-    SaveFile(buffer,_file_size,"0.bmp");
 }
 
+void makeCircle(Pixel* colourTable,int radius)
+{
+  for(int y=0;y<_width;y++)
+    for(int x=0;x<_height;x++)
+        {
+            int index=x*_width+y;
+            int x_transformed=x-0;
+            int y_transformed=y-0;
+            int res=x_transformed*x_transformed+y_transformed*y_transformed;
+            if((res)<radius*radius)
+            {
+                colourTable[index].blue=255;
+                colourTable[index].red=0;
+                colourTable[index].green=0;
+            }
+            else
+            {
+               colourTable[index].blue=0;
+               colourTable[index].red=255;
+               colourTable[index].green=0; 
+            }
+        }
+}
 
 void SaveFile(void* buffer,int bufferSize,char* fileName)
 {
