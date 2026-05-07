@@ -1175,6 +1175,7 @@ CMakeFiles/main.dir/imgui/imgui_widgets.cpp.o: /home/raed/Documents/dev/projects
   /usr/lib/gcc/x86_64-redhat-linux/15/include/xtestintrin.h
 
 CMakeFiles/main.dir/main.cpp.o: /home/raed/Documents/dev/projects/inprogress\ or\ completed/Custom\ Video\ Encoding\ App/main.cpp \
+  /home/raed/Documents/dev/projects/inprogress\ or\ completed/Custom\ Video\ Encoding\ App/gui_abstraction.h \
   /home/raed/Documents/dev/projects/inprogress\ or\ completed/Custom\ Video\ Encoding\ App/imgui/backends/imgui_impl_glfw.h \
   /home/raed/Documents/dev/projects/inprogress\ or\ completed/Custom\ Video\ Encoding\ App/imgui/backends/imgui_impl_opengl3.h \
   /home/raed/Documents/dev/projects/inprogress\ or\ completed/Custom\ Video\ Encoding\ App/imgui/imconfig.h \
@@ -1183,17 +1184,50 @@ CMakeFiles/main.dir/main.cpp.o: /home/raed/Documents/dev/projects/inprogress\ or
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/KHR/khrplatform.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/asm/bitsperlong.h \
+  /usr/include/asm/posix_types.h \
+  /usr/include/asm/posix_types_64.h \
+  /usr/include/asm/types.h \
   /usr/include/assert.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/cpu-set.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/long-double.h \
+  /usr/include/bits/pthread_stack_min-dynamic.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h \
+  /usr/include/bits/setjmp.h \
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/time.h \
   /usr/include/bits/time64.h \
   /usr/include/bits/timesize.h \
+  /usr/include/bits/timex.h \
   /usr/include/bits/types.h \
   /usr/include/bits/types/__locale_t.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
   /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/bits/types/struct_itimerspec.h \
+  /usr/include/bits/types/struct_sched_param.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/struct_tm.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wordsize.h \
@@ -1201,11 +1235,18 @@ CMakeFiles/main.dir/main.cpp.o: /home/raed/Documents/dev/projects/inprogress\ or
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/sched/types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/linux/types.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
+  /usr/include/time.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/float.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
@@ -1279,6 +1320,40 @@ CMakeFiles/main.dir/imgui/backends/imgui_impl_glfw.cpp.o:
 
 /lib64/libc.so.6:
 
+/usr/include/time.h:
+
+/usr/include/pthread.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/linux/sched/types.h:
+
+/usr/include/bits/types/struct_tm.h:
+
+/usr/include/bits/types/struct_sched_param.h:
+
+/usr/include/bits/timex.h:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/asm/types.h:
+
+/usr/include/asm/posix_types_64.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/asm/posix_types.h:
+
+/usr/include/asm/bitsperlong.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
 /home/raed/Documents/dev/projects/inprogress\ or\ completed/Custom\ Video\ Encoding\ App/main.cpp:
 
 /home/raed/Documents/dev/projects/inprogress\ or\ completed/Custom\ Video\ Encoding\ App/imgui/imstb_textedit.h:
@@ -1341,6 +1416,8 @@ CMakeFiles/main.dir/imgui/backends/imgui_impl_glfw.cpp.o:
 
 /usr/include/bits/posix1_lim.h:
 
+/usr/include/linux/posix_types.h:
+
 /usr/include/bits/types/FILE.h:
 
 /usr/include/stdlib.h:
@@ -1372,6 +1449,8 @@ CMakeFiles/main.dir/main.cpp.o:
 /usr/include/bits/timesize.h:
 
 /usr/include/bits/waitflags.h:
+
+/usr/include/bits/cpu-set.h:
 
 /usr/include/bits/dlfcn.h:
 
@@ -1475,6 +1554,8 @@ CMakeFiles/main.dir/main.cpp.o:
 
 /usr/include/bits/endian.h:
 
+/usr/include/bits/types/struct___jmp_buf_tag.h:
+
 /usr/include/bits/waitstatus.h:
 
 /usr/include/bits/wchar.h:
@@ -1521,6 +1602,8 @@ CMakeFiles/main.dir/main.cpp.o:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/avx512ifmaintrin.h:
 
+/home/raed/Documents/dev/projects/inprogress\ or\ completed/Custom\ Video\ Encoding\ App/gui_abstraction.h:
+
 /usr/include/X11/Xutil.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/avx10_2-512minmaxintrin.h:
@@ -1561,6 +1644,8 @@ CMakeFiles/main.dir/main.cpp.o:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/syslimits.h:
 
+/usr/include/sched.h:
+
 /usr/include/bits/fp-fast.h:
 
 /usr/include/GLFW/glfw3native.h:
@@ -1574,6 +1659,8 @@ CMakeFiles/main.dir/main.cpp.o:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/wbnoinvdintrin.h:
 
 /usr/include/bits/types/__sigset_t.h:
+
+/usr/include/linux/stddef.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
 
@@ -1600,6 +1687,8 @@ CMakeFiles/main.dir/main.cpp.o:
 /usr/include/sys/wait.h:
 
 /usr/include/KHR/khrplatform.h:
+
+/usr/include/bits/sched.h:
 
 /usr/include/features.h:
 
@@ -1704,6 +1793,8 @@ CMakeFiles/main.dir/imgui/imgui_tables.cpp.o:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/fxsrintrin.h:
 
 /usr/include/c++/15/bits/cpp_type_traits.h:
+
+/usr/include/bits/types/struct_itimerspec.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/avxneconvertintrin.h:
 
