@@ -13,7 +13,7 @@ rpm:
 apt:
 	sudo apt install g++ cmake libglfw3-dev libgl1-mesa-dev
 bmp:
-	gcc bmp_maker.c -o bmp_maker
+	g++ bmp_maker.cpp -o bmp_maker
 	./bmp_maker
 	read
 	rm bmp_maker

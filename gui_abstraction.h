@@ -4,7 +4,7 @@
 #include "imgui/backends/imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
 
-extern bool g_closeWindow=false;
+extern bool g_closeWindow;
 
 class Window
 {
