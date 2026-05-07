@@ -1,0 +1,3 @@
+/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/main.dir
+/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/edit_cache.dir
+/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/rebuild_cache.dir
