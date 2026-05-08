@@ -7,7 +7,6 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
 add_executable(main 
-    main.cpp
     imgui/imgui.cpp
     imgui/imgui_demo.cpp
     imgui/imgui_draw.cpp
@@ -15,6 +14,10 @@ add_executable(main
     imgui/imgui_tables.cpp
     imgui/backends/imgui_impl_glfw.cpp
     imgui/backends/imgui_impl_opengl3.cpp
+    implot/implot.cpp
+    implot/implot_items.cpp
+    gui_abstraction.cpp
+    main.cpp
 )
 
 # Add BOTH directories - the root AND the imgui folder

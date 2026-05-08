@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /usr/sbin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /usr/sbin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = "/home/raed/Documents/dev/projects/inprogress or completed/Cu
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/sbin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/sbin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -128,6 +128,30 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+gui_abstraction.o: gui_abstraction.cpp.o
+.PHONY : gui_abstraction.o
+
+# target to build an object file
+gui_abstraction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/gui_abstraction.cpp.o
+.PHONY : gui_abstraction.cpp.o
+
+gui_abstraction.i: gui_abstraction.cpp.i
+.PHONY : gui_abstraction.i
+
+# target to preprocess a source file
+gui_abstraction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/gui_abstraction.cpp.i
+.PHONY : gui_abstraction.cpp.i
+
+gui_abstraction.s: gui_abstraction.cpp.s
+.PHONY : gui_abstraction.s
+
+# target to generate assembly for a file
+gui_abstraction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/gui_abstraction.cpp.s
+.PHONY : gui_abstraction.cpp.s
 
 imgui/backends/imgui_impl_glfw.o: imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : imgui/backends/imgui_impl_glfw.o
@@ -297,6 +321,54 @@ imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/imgui/imgui_widgets.cpp.s
 .PHONY : imgui/imgui_widgets.cpp.s
 
+implot/implot.o: implot/implot.cpp.o
+.PHONY : implot/implot.o
+
+# target to build an object file
+implot/implot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/implot/implot.cpp.o
+.PHONY : implot/implot.cpp.o
+
+implot/implot.i: implot/implot.cpp.i
+.PHONY : implot/implot.i
+
+# target to preprocess a source file
+implot/implot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/implot/implot.cpp.i
+.PHONY : implot/implot.cpp.i
+
+implot/implot.s: implot/implot.cpp.s
+.PHONY : implot/implot.s
+
+# target to generate assembly for a file
+implot/implot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/implot/implot.cpp.s
+.PHONY : implot/implot.cpp.s
+
+implot/implot_items.o: implot/implot_items.cpp.o
+.PHONY : implot/implot_items.o
+
+# target to build an object file
+implot/implot_items.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/implot/implot_items.cpp.o
+.PHONY : implot/implot_items.cpp.o
+
+implot/implot_items.i: implot/implot_items.cpp.i
+.PHONY : implot/implot_items.i
+
+# target to preprocess a source file
+implot/implot_items.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/implot/implot_items.cpp.i
+.PHONY : implot/implot_items.cpp.i
+
+implot/implot_items.s: implot/implot_items.cpp.s
+.PHONY : implot/implot_items.s
+
+# target to generate assembly for a file
+implot/implot_items.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/implot/implot_items.cpp.s
+.PHONY : implot/implot_items.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -330,6 +402,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... gui_abstraction.o"
+	@echo "... gui_abstraction.i"
+	@echo "... gui_abstraction.s"
 	@echo "... imgui/backends/imgui_impl_glfw.o"
 	@echo "... imgui/backends/imgui_impl_glfw.i"
 	@echo "... imgui/backends/imgui_impl_glfw.s"
@@ -351,6 +426,12 @@ help:
 	@echo "... imgui/imgui_widgets.o"
 	@echo "... imgui/imgui_widgets.i"
 	@echo "... imgui/imgui_widgets.s"
+	@echo "... implot/implot.o"
+	@echo "... implot/implot.i"
+	@echo "... implot/implot.s"
+	@echo "... implot/implot_items.o"
+	@echo "... implot/implot_items.i"
+	@echo "... implot/implot_items.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

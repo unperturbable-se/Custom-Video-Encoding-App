@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/gui_abstraction.cpp" "CMakeFiles/main.dir/gui_abstraction.cpp.o" "gcc" "CMakeFiles/main.dir/gui_abstraction.cpp.o.d"
   "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/imgui/backends/imgui_impl_glfw.cpp" "CMakeFiles/main.dir/imgui/backends/imgui_impl_glfw.cpp.o" "gcc" "CMakeFiles/main.dir/imgui/backends/imgui_impl_glfw.cpp.o.d"
   "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/imgui/backends/imgui_impl_opengl3.cpp" "CMakeFiles/main.dir/imgui/backends/imgui_impl_opengl3.cpp.o" "gcc" "CMakeFiles/main.dir/imgui/backends/imgui_impl_opengl3.cpp.o.d"
   "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/imgui/imgui.cpp" "CMakeFiles/main.dir/imgui/imgui.cpp.o" "gcc" "CMakeFiles/main.dir/imgui/imgui.cpp.o.d"
@@ -15,6 +16,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/imgui/imgui_draw.cpp" "CMakeFiles/main.dir/imgui/imgui_draw.cpp.o" "gcc" "CMakeFiles/main.dir/imgui/imgui_draw.cpp.o.d"
   "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/imgui/imgui_tables.cpp" "CMakeFiles/main.dir/imgui/imgui_tables.cpp.o" "gcc" "CMakeFiles/main.dir/imgui/imgui_tables.cpp.o.d"
   "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/imgui/imgui_widgets.cpp" "CMakeFiles/main.dir/imgui/imgui_widgets.cpp.o" "gcc" "CMakeFiles/main.dir/imgui/imgui_widgets.cpp.o.d"
+  "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/implot/implot.cpp" "CMakeFiles/main.dir/implot/implot.cpp.o" "gcc" "CMakeFiles/main.dir/implot/implot.cpp.o.d"
+  "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/implot/implot_items.cpp" "CMakeFiles/main.dir/implot/implot_items.cpp.o" "gcc" "CMakeFiles/main.dir/implot/implot_items.cpp.o.d"
   "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
   "" "main" "gcc" "CMakeFiles/main.dir/link.d"
   )

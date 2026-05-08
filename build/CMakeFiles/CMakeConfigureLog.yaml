@@ -20,26 +20,26 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
       - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/home/raed/.local/bin/uname"
-      - "/home/raed/bin/uname"
+      - "/usr/local/sbin/uname"
       - "/usr/local/bin/uname"
-    found: "/usr/bin/uname"
+    found: "/usr/sbin/uname"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "message-v1"
     backtrace:
@@ -68,25 +68,26 @@ events:
       - "make"
       - "smake"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/home/raed/.local/bin/gmake"
-      - "/home/raed/bin/gmake"
+      - "/usr/local/sbin/gmake"
       - "/usr/local/bin/gmake"
-    found: "/usr/bin/gmake"
+    found: "/usr/sbin/gmake"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -113,25 +114,26 @@ events:
       - "icx"
       - "clang"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/home/raed/.local/bin/cc"
-      - "/home/raed/bin/cc"
+      - "/usr/local/sbin/cc"
       - "/usr/local/bin/cc"
-    found: "/usr/bin/cc"
+    found: "/usr/sbin/cc"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -159,12 +161,13 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "message-v1"
     backtrace:
@@ -174,7 +177,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/cc 
+      Compiler: /usr/sbin/cc 
       Build flags: 
       Id flags:  
       
@@ -207,21 +210,23 @@ events:
     names:
       - "ar"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/ar"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/ar"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -242,21 +247,23 @@ events:
     names:
       - "ranlib"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/ranlib"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -277,21 +284,23 @@ events:
     names:
       - "strip"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/strip"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/strip"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -312,21 +321,23 @@ events:
     names:
       - "ld"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/ld"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/ld"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -347,21 +358,23 @@ events:
     names:
       - "nm"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/nm"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/nm"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -382,21 +395,23 @@ events:
     names:
       - "objdump"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/objdump"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/objdump"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -417,21 +432,23 @@ events:
     names:
       - "objcopy"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/objcopy"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/objcopy"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -452,21 +469,23 @@ events:
     names:
       - "readelf"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/readelf"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/readelf"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -487,28 +506,31 @@ events:
     names:
       - "dlltool"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/usr/bin/dlltool"
-      - "/home/raed/.local/bin/dlltool"
-      - "/home/raed/bin/dlltool"
-      - "/usr/local/bin/dlltool"
-      - "/usr/local/sbin/dlltool"
       - "/usr/sbin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/bin/dlltool"
+      - "/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/var/lib/snapd/snap/bin/dlltool"
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -529,21 +551,23 @@ events:
     names:
       - "addr2line"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
-    found: "/usr/bin/addr2line"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/sbin/addr2line"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -564,28 +588,31 @@ events:
     names:
       - "tapi"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/usr/bin/tapi"
-      - "/home/raed/.local/bin/tapi"
-      - "/home/raed/bin/tapi"
-      - "/usr/local/bin/tapi"
-      - "/usr/local/sbin/tapi"
       - "/usr/sbin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/bin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/var/lib/snapd/snap/bin/tapi"
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -609,40 +636,45 @@ events:
       - "gcc-ar16"
       - "gcc-ar"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/usr/bin/gcc-ar-16.1"
-      - "/home/raed/.local/bin/gcc-ar-16.1"
-      - "/home/raed/bin/gcc-ar-16.1"
-      - "/usr/local/bin/gcc-ar-16.1"
-      - "/usr/local/sbin/gcc-ar-16.1"
       - "/usr/sbin/gcc-ar-16.1"
-      - "/usr/bin/gcc-ar-16"
-      - "/home/raed/.local/bin/gcc-ar-16"
-      - "/home/raed/bin/gcc-ar-16"
-      - "/usr/local/bin/gcc-ar-16"
-      - "/usr/local/sbin/gcc-ar-16"
+      - "/usr/local/sbin/gcc-ar-16.1"
+      - "/usr/local/bin/gcc-ar-16.1"
+      - "/usr/bin/gcc-ar-16.1"
+      - "/sbin/gcc-ar-16.1"
+      - "/bin/gcc-ar-16.1"
+      - "/var/lib/snapd/snap/bin/gcc-ar-16.1"
       - "/usr/sbin/gcc-ar-16"
-      - "/usr/bin/gcc-ar16"
-      - "/home/raed/.local/bin/gcc-ar16"
-      - "/home/raed/bin/gcc-ar16"
-      - "/usr/local/bin/gcc-ar16"
-      - "/usr/local/sbin/gcc-ar16"
+      - "/usr/local/sbin/gcc-ar-16"
+      - "/usr/local/bin/gcc-ar-16"
+      - "/usr/bin/gcc-ar-16"
+      - "/sbin/gcc-ar-16"
+      - "/bin/gcc-ar-16"
+      - "/var/lib/snapd/snap/bin/gcc-ar-16"
       - "/usr/sbin/gcc-ar16"
-    found: "/usr/bin/gcc-ar"
+      - "/usr/local/sbin/gcc-ar16"
+      - "/usr/local/bin/gcc-ar16"
+      - "/usr/bin/gcc-ar16"
+      - "/sbin/gcc-ar16"
+      - "/bin/gcc-ar16"
+      - "/var/lib/snapd/snap/bin/gcc-ar16"
+    found: "/usr/sbin/gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -666,40 +698,45 @@ events:
       - "gcc-ranlib16"
       - "gcc-ranlib"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/usr/bin/gcc-ranlib-16.1"
-      - "/home/raed/.local/bin/gcc-ranlib-16.1"
-      - "/home/raed/bin/gcc-ranlib-16.1"
-      - "/usr/local/bin/gcc-ranlib-16.1"
-      - "/usr/local/sbin/gcc-ranlib-16.1"
       - "/usr/sbin/gcc-ranlib-16.1"
-      - "/usr/bin/gcc-ranlib-16"
-      - "/home/raed/.local/bin/gcc-ranlib-16"
-      - "/home/raed/bin/gcc-ranlib-16"
-      - "/usr/local/bin/gcc-ranlib-16"
-      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/usr/local/sbin/gcc-ranlib-16.1"
+      - "/usr/local/bin/gcc-ranlib-16.1"
+      - "/usr/bin/gcc-ranlib-16.1"
+      - "/sbin/gcc-ranlib-16.1"
+      - "/bin/gcc-ranlib-16.1"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib-16.1"
       - "/usr/sbin/gcc-ranlib-16"
-      - "/usr/bin/gcc-ranlib16"
-      - "/home/raed/.local/bin/gcc-ranlib16"
-      - "/home/raed/bin/gcc-ranlib16"
-      - "/usr/local/bin/gcc-ranlib16"
-      - "/usr/local/sbin/gcc-ranlib16"
+      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/usr/local/bin/gcc-ranlib-16"
+      - "/usr/bin/gcc-ranlib-16"
+      - "/sbin/gcc-ranlib-16"
+      - "/bin/gcc-ranlib-16"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib-16"
       - "/usr/sbin/gcc-ranlib16"
-    found: "/usr/bin/gcc-ranlib"
+      - "/usr/local/sbin/gcc-ranlib16"
+      - "/usr/local/bin/gcc-ranlib16"
+      - "/usr/bin/gcc-ranlib16"
+      - "/sbin/gcc-ranlib16"
+      - "/bin/gcc-ranlib16"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib16"
+    found: "/usr/sbin/gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -729,16 +766,17 @@ events:
       - "icx"
       - "clang++"
     candidate_directories:
-      - "/usr/bin/"
-    found: "/usr/bin/c++"
+      - "/usr/sbin/"
+    found: "/usr/sbin/c++"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -766,12 +804,13 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "message-v1"
     backtrace:
@@ -781,7 +820,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/c++ 
+      Compiler: /usr/sbin/c++ 
       Build flags: 
       Id flags:  
       
@@ -817,40 +856,45 @@ events:
       - "gcc-ar16"
       - "gcc-ar"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/usr/bin/gcc-ar-16.1"
-      - "/home/raed/.local/bin/gcc-ar-16.1"
-      - "/home/raed/bin/gcc-ar-16.1"
-      - "/usr/local/bin/gcc-ar-16.1"
-      - "/usr/local/sbin/gcc-ar-16.1"
       - "/usr/sbin/gcc-ar-16.1"
-      - "/usr/bin/gcc-ar-16"
-      - "/home/raed/.local/bin/gcc-ar-16"
-      - "/home/raed/bin/gcc-ar-16"
-      - "/usr/local/bin/gcc-ar-16"
-      - "/usr/local/sbin/gcc-ar-16"
+      - "/usr/local/sbin/gcc-ar-16.1"
+      - "/usr/local/bin/gcc-ar-16.1"
+      - "/usr/bin/gcc-ar-16.1"
+      - "/sbin/gcc-ar-16.1"
+      - "/bin/gcc-ar-16.1"
+      - "/var/lib/snapd/snap/bin/gcc-ar-16.1"
       - "/usr/sbin/gcc-ar-16"
-      - "/usr/bin/gcc-ar16"
-      - "/home/raed/.local/bin/gcc-ar16"
-      - "/home/raed/bin/gcc-ar16"
-      - "/usr/local/bin/gcc-ar16"
-      - "/usr/local/sbin/gcc-ar16"
+      - "/usr/local/sbin/gcc-ar-16"
+      - "/usr/local/bin/gcc-ar-16"
+      - "/usr/bin/gcc-ar-16"
+      - "/sbin/gcc-ar-16"
+      - "/bin/gcc-ar-16"
+      - "/var/lib/snapd/snap/bin/gcc-ar-16"
       - "/usr/sbin/gcc-ar16"
-    found: "/usr/bin/gcc-ar"
+      - "/usr/local/sbin/gcc-ar16"
+      - "/usr/local/bin/gcc-ar16"
+      - "/usr/bin/gcc-ar16"
+      - "/sbin/gcc-ar16"
+      - "/bin/gcc-ar16"
+      - "/var/lib/snapd/snap/bin/gcc-ar16"
+    found: "/usr/sbin/gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -874,40 +918,45 @@ events:
       - "gcc-ranlib16"
       - "gcc-ranlib"
     candidate_directories:
-      - "/usr/bin/"
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
       - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
     searched_directories:
-      - "/usr/bin/gcc-ranlib-16.1"
-      - "/home/raed/.local/bin/gcc-ranlib-16.1"
-      - "/home/raed/bin/gcc-ranlib-16.1"
-      - "/usr/local/bin/gcc-ranlib-16.1"
-      - "/usr/local/sbin/gcc-ranlib-16.1"
       - "/usr/sbin/gcc-ranlib-16.1"
-      - "/usr/bin/gcc-ranlib-16"
-      - "/home/raed/.local/bin/gcc-ranlib-16"
-      - "/home/raed/bin/gcc-ranlib-16"
-      - "/usr/local/bin/gcc-ranlib-16"
-      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/usr/local/sbin/gcc-ranlib-16.1"
+      - "/usr/local/bin/gcc-ranlib-16.1"
+      - "/usr/bin/gcc-ranlib-16.1"
+      - "/sbin/gcc-ranlib-16.1"
+      - "/bin/gcc-ranlib-16.1"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib-16.1"
       - "/usr/sbin/gcc-ranlib-16"
-      - "/usr/bin/gcc-ranlib16"
-      - "/home/raed/.local/bin/gcc-ranlib16"
-      - "/home/raed/bin/gcc-ranlib16"
-      - "/usr/local/bin/gcc-ranlib16"
-      - "/usr/local/sbin/gcc-ranlib16"
+      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/usr/local/bin/gcc-ranlib-16"
+      - "/usr/bin/gcc-ranlib-16"
+      - "/sbin/gcc-ranlib-16"
+      - "/bin/gcc-ranlib-16"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib-16"
       - "/usr/sbin/gcc-ranlib16"
-    found: "/usr/bin/gcc-ranlib"
+      - "/usr/local/sbin/gcc-ranlib16"
+      - "/usr/local/bin/gcc-ranlib16"
+      - "/usr/bin/gcc-ranlib16"
+      - "/sbin/gcc-ranlib16"
+      - "/bin/gcc-ranlib16"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib16"
+    found: "/usr/sbin/gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -917,8 +966,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR"
-      binary: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR"
+      source: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d"
+      binary: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
@@ -928,16 +977,16 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR'
+        Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cd8fc/fast
-        gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_cd8fc.dir/build.make CMakeFiles/cmTC_cd8fc.dir/build
-        gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR'
-        Building C object CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_4ee60/fast
+        gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d'
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_4ee60.dir/build.make CMakeFiles/cmTC_4ee60.dir/build
+        gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d'
+        Building C object CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o
+        /usr/sbin/cc   -v -o CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/cc
+        COLLECT_GCC=/usr/sbin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-redhat-linux
@@ -945,8 +994,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.1 20260501 (Red Hat 16.1.1-1) (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_cd8fc.dir/'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_cd8fc.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccbMDdVH.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4ee60.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_4ee60.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccluaoPZ.s
         GNU C23 (GCC) version 16.1.1 20260501 (Red Hat 16.1.1-1) (x86_64-redhat-linux)
         	compiled by GNU C version 16.1.1 20260501 (Red Hat 16.1.1-1), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.24-GMP
         
@@ -960,16 +1009,16 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 22d46a7944dda6b9310ab0cb59c0bc64
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_cd8fc.dir/'
-         as -v --64 -o CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o /tmp/ccbMDdVH.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4ee60.dir/'
+         as -v --64 -o CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o /tmp/ccluaoPZ.s
         GNU assembler version 2.46 (x86_64-redhat-linux) using BFD version version 2.46-1.fc44
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_cd8fc
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd8fc.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_4ee60
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_4ee60.dir/link.txt --verbose=1
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/cc
+        COLLECT_GCC=/usr/sbin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
@@ -980,15 +1029,15 @@ events:
         gcc version 16.1.1 20260501 (Red Hat 16.1.1-1) (GCC) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd8fc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_cd8fc.'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxNgfFC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_cd8fc /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4ee60' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_4ee60.'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTrWLvb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4ee60 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         collect2 version 16.1.1 20260501 (Red Hat 16.1.1-1)
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxNgfFC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_cd8fc /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        /usr/sbin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTrWLvb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4ee60 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         GNU ld version 2.46-1.fc44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd8fc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_cd8fc.'
-        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o -o cmTC_cd8fc
-        gmake[2]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR'
-        gmake[1]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4ee60' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_4ee60.'
+        /usr/sbin/cc  -v -Wl,-v CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o -o cmTC_4ee60
+        gmake[2]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d'
+        gmake[1]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d'
         
       exitCode: 0
   -
@@ -1021,16 +1070,16 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR']
+        ignore line: [Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cd8fc/fast]
-        ignore line: [gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR']
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_cd8fc.dir/build.make CMakeFiles/cmTC_cd8fc.dir/build]
-        ignore line: [gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-9xQoIR']
-        ignore line: [Building C object CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_4ee60/fast]
+        ignore line: [gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d']
+        ignore line: [/usr/sbin/gmake  -f CMakeFiles/cmTC_4ee60.dir/build.make CMakeFiles/cmTC_4ee60.dir/build]
+        ignore line: [gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-AQfB3d']
+        ignore line: [Building C object CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/sbin/cc   -v -o CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_GCC=/usr/sbin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-redhat-linux]
@@ -1038,8 +1087,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.1 20260501 (Red Hat 16.1.1-1) (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_cd8fc.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_cd8fc.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccbMDdVH.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4ee60.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_4ee60.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccluaoPZ.s]
         ignore line: [GNU C23 (GCC) version 16.1.1 20260501 (Red Hat 16.1.1-1) (x86_64-redhat-linux)]
         ignore line: [	compiled by GNU C version 16.1.1 20260501 (Red Hat 16.1.1-1)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -1053,16 +1102,16 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 22d46a7944dda6b9310ab0cb59c0bc64]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_cd8fc.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o /tmp/ccbMDdVH.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4ee60.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o /tmp/ccluaoPZ.s]
         ignore line: [GNU assembler version 2.46 (x86_64-redhat-linux) using BFD version version 2.46-1.fc44]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_cd8fc]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd8fc.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_4ee60]
+        ignore line: [/usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_4ee60.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_GCC=/usr/sbin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -1073,13 +1122,13 @@ events:
         ignore line: [gcc version 16.1.1 20260501 (Red Hat 16.1.1-1) (GCC) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd8fc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_cd8fc.']
-        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxNgfFC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_cd8fc /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4ee60' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_4ee60.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTrWLvb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4ee60 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccxNgfFC.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccTrWLvb.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s_asneeded] ==> ignore
           arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
@@ -1095,7 +1144,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_cd8fc] ==> ignore
+          arg [cmTC_4ee60] ==> ignore
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o]
@@ -1107,7 +1156,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lgcc_s_asneeded] ==> lib [gcc_s_asneeded]
           arg [-latomic_asneeded] ==> lib [atomic_asneeded]
@@ -1117,8 +1166,8 @@ events:
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
         ignore line: [collect2 version 16.1.1 20260501 (Red Hat 16.1.1-1)]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxNgfFC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_cd8fc /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_cd8fc.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
-        linker tool for 'C': /usr/bin/ld
+        ignore line: [/usr/sbin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTrWLvb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4ee60 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4ee60.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        linker tool for 'C': /usr/sbin/ld
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
@@ -1143,7 +1192,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      Running the C compiler's linker: "/usr/sbin/ld" "-v"
       GNU ld version 2.46-1.fc44
   -
     kind: "try_compile-v1"
@@ -1154,8 +1203,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM"
-      binary: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM"
+      source: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw"
+      binary: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1166,16 +1215,16 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM'
+        Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3ae18/fast
-        gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_3ae18.dir/build.make CMakeFiles/cmTC_3ae18.dir/build
-        gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM'
-        Building CXX object CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_22d72/fast
+        gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw'
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_22d72.dir/build.make CMakeFiles/cmTC_22d72.dir/build
+        gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw'
+        Building CXX object CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/sbin/c++   -v -o CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
+        COLLECT_GCC=/usr/sbin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-redhat-linux
@@ -1183,8 +1232,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.1 20260501 (Red Hat 16.1.1-1) (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_3ae18.dir/'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_3ae18.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/cca7w1ux.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_22d72.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_22d72.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccN3VnSp.s
         GNU C++20 (GCC) version 16.1.1 20260501 (Red Hat 16.1.1-1) (x86_64-redhat-linux)
         	compiled by GNU C version 16.1.1 20260501 (Red Hat 16.1.1-1), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.24-GMP
         
@@ -1201,16 +1250,16 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: e9c585eac4e856898ce035818c58d516
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_3ae18.dir/'
-         as -v --64 -o CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o /tmp/cca7w1ux.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_22d72.dir/'
+         as -v --64 -o CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccN3VnSp.s
         GNU assembler version 2.46 (x86_64-redhat-linux) using BFD version version 2.46-1.fc44
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_3ae18
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ae18.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_22d72
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_22d72.dir/link.txt --verbose=1
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
+        COLLECT_GCC=/usr/sbin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
@@ -1221,15 +1270,15 @@ events:
         gcc version 16.1.1 20260501 (Red Hat 16.1.1-1) (GCC) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3ae18' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_3ae18.'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cchAUh2I.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3ae18 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_22d72' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_22d72.'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccs2LEzt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_22d72 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         collect2 version 16.1.1 20260501 (Red Hat 16.1.1-1)
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cchAUh2I.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3ae18 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        /usr/sbin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccs2LEzt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_22d72 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         GNU ld version 2.46-1.fc44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3ae18' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_3ae18.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_3ae18
-        gmake[2]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM'
-        gmake[1]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_22d72' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_22d72.'
+        /usr/sbin/c++  -v -Wl,-v CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_22d72
+        gmake[2]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw'
+        gmake[1]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw'
         
       exitCode: 0
   -
@@ -1268,16 +1317,16 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM']
+        ignore line: [Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3ae18/fast]
-        ignore line: [gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM']
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_3ae18.dir/build.make CMakeFiles/cmTC_3ae18.dir/build]
-        ignore line: [gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-RFU5OM']
-        ignore line: [Building CXX object CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_22d72/fast]
+        ignore line: [gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw']
+        ignore line: [/usr/sbin/gmake  -f CMakeFiles/cmTC_22d72.dir/build.make CMakeFiles/cmTC_22d72.dir/build]
+        ignore line: [gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-Kh6dWw']
+        ignore line: [Building CXX object CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/sbin/c++   -v -o CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_GCC=/usr/sbin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-redhat-linux]
@@ -1285,8 +1334,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.1 20260501 (Red Hat 16.1.1-1) (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_3ae18.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_3ae18.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/cca7w1ux.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_22d72.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_22d72.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccN3VnSp.s]
         ignore line: [GNU C++20 (GCC) version 16.1.1 20260501 (Red Hat 16.1.1-1) (x86_64-redhat-linux)]
         ignore line: [	compiled by GNU C version 16.1.1 20260501 (Red Hat 16.1.1-1)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -1303,16 +1352,16 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: e9c585eac4e856898ce035818c58d516]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_3ae18.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o /tmp/cca7w1ux.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_22d72.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccN3VnSp.s]
         ignore line: [GNU assembler version 2.46 (x86_64-redhat-linux) using BFD version version 2.46-1.fc44]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_3ae18]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ae18.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_22d72]
+        ignore line: [/usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_22d72.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_GCC=/usr/sbin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -1323,13 +1372,13 @@ events:
         ignore line: [gcc version 16.1.1 20260501 (Red Hat 16.1.1-1) (GCC) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3ae18' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_3ae18.']
-        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cchAUh2I.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3ae18 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_22d72' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_22d72.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccs2LEzt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_22d72 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cchAUh2I.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccs2LEzt.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
@@ -1345,7 +1394,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_3ae18] ==> ignore
+          arg [cmTC_22d72] ==> ignore
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o]
@@ -1357,7 +1406,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1369,8 +1418,8 @@ events:
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
         ignore line: [collect2 version 16.1.1 20260501 (Red Hat 16.1.1-1)]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cchAUh2I.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3ae18 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_3ae18.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
-        linker tool for 'CXX': /usr/bin/ld
+        ignore line: [/usr/sbin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccs2LEzt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_22d72 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_22d72.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        linker tool for 'CXX': /usr/sbin/ld
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
@@ -1395,7 +1444,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      Running the CXX compiler's linker: "/usr/sbin/ld" "-v"
       GNU ld version 2.46-1.fc44
   -
     kind: "find-v1"
@@ -1416,12 +1465,13 @@ events:
     names:
       - "GL/gl.h"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -1438,23 +1488,25 @@ events:
       - "/usr/openwin/share/include/"
       - "/opt/graphics/OpenGL/include/"
     searched_directories:
-      - "/home/raed/.local/bin/GL/gl.h"
-      - "/home/raed/bin/GL/gl.h"
-      - "/usr/local/bin/GL/gl.h"
-      - "/usr/bin/GL/gl.h"
       - "/usr/local/sbin/GL/gl.h"
+      - "/usr/local/bin/GL/gl.h"
       - "/usr/sbin/GL/gl.h"
+      - "/usr/bin/GL/gl.h"
+      - "/sbin/GL/gl.h"
+      - "/bin/GL/gl.h"
+      - "/var/lib/snapd/snap/bin/GL/gl.h"
       - "/usr/local/include/GL/gl.h"
       - "/usr/local/GL/gl.h"
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1486,12 +1538,13 @@ events:
     names:
       - "GL/glx.h"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -1505,23 +1558,25 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/GL/glx.h"
-      - "/home/raed/bin/GL/glx.h"
-      - "/usr/local/bin/GL/glx.h"
-      - "/usr/bin/GL/glx.h"
       - "/usr/local/sbin/GL/glx.h"
+      - "/usr/local/bin/GL/glx.h"
       - "/usr/sbin/GL/glx.h"
+      - "/usr/bin/GL/glx.h"
+      - "/sbin/GL/glx.h"
+      - "/bin/GL/glx.h"
+      - "/var/lib/snapd/snap/bin/GL/glx.h"
       - "/usr/local/include/GL/glx.h"
       - "/usr/local/GL/glx.h"
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1553,12 +1608,13 @@ events:
     names:
       - "EGL/egl.h"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -1572,23 +1628,25 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/EGL/egl.h"
-      - "/home/raed/bin/EGL/egl.h"
-      - "/usr/local/bin/EGL/egl.h"
-      - "/usr/bin/EGL/egl.h"
       - "/usr/local/sbin/EGL/egl.h"
+      - "/usr/local/bin/EGL/egl.h"
       - "/usr/sbin/EGL/egl.h"
+      - "/usr/bin/EGL/egl.h"
+      - "/sbin/EGL/egl.h"
+      - "/bin/EGL/egl.h"
+      - "/var/lib/snapd/snap/bin/EGL/egl.h"
       - "/usr/local/include/EGL/egl.h"
       - "/usr/local/EGL/egl.h"
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1620,12 +1678,13 @@ events:
     names:
       - "GLES2/gl2.h"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -1639,23 +1698,25 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/GLES2/gl2.h"
-      - "/home/raed/bin/GLES2/gl2.h"
-      - "/usr/local/bin/GLES2/gl2.h"
-      - "/usr/bin/GLES2/gl2.h"
       - "/usr/local/sbin/GLES2/gl2.h"
+      - "/usr/local/bin/GLES2/gl2.h"
       - "/usr/sbin/GLES2/gl2.h"
+      - "/usr/bin/GLES2/gl2.h"
+      - "/sbin/GLES2/gl2.h"
+      - "/bin/GLES2/gl2.h"
+      - "/var/lib/snapd/snap/bin/GLES2/gl2.h"
       - "/usr/local/include/GLES2/gl2.h"
       - "/usr/local/GLES2/gl2.h"
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1687,12 +1748,13 @@ events:
     names:
       - "GLES3/gl3.h"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -1706,23 +1768,25 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/GLES3/gl3.h"
-      - "/home/raed/bin/GLES3/gl3.h"
-      - "/usr/local/bin/GLES3/gl3.h"
-      - "/usr/bin/GLES3/gl3.h"
       - "/usr/local/sbin/GLES3/gl3.h"
+      - "/usr/local/bin/GLES3/gl3.h"
       - "/usr/sbin/GLES3/gl3.h"
+      - "/usr/bin/GLES3/gl3.h"
+      - "/sbin/GLES3/gl3.h"
+      - "/bin/GLES3/gl3.h"
+      - "/var/lib/snapd/snap/bin/GLES3/gl3.h"
       - "/usr/local/include/GLES3/gl3.h"
       - "/usr/local/GLES3/gl3.h"
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1754,12 +1818,13 @@ events:
     names:
       - "GL/xmesa.h"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -1776,12 +1841,13 @@ events:
       - "/usr/openwin/share/include/"
       - "/opt/graphics/OpenGL/include/"
     searched_directories:
-      - "/home/raed/.local/bin/GL/xmesa.h"
-      - "/home/raed/bin/GL/xmesa.h"
-      - "/usr/local/bin/GL/xmesa.h"
-      - "/usr/bin/GL/xmesa.h"
       - "/usr/local/sbin/GL/xmesa.h"
+      - "/usr/local/bin/GL/xmesa.h"
       - "/usr/sbin/GL/xmesa.h"
+      - "/usr/bin/GL/xmesa.h"
+      - "/sbin/GL/xmesa.h"
+      - "/bin/GL/xmesa.h"
+      - "/var/lib/snapd/snap/bin/GL/xmesa.h"
       - "/usr/local/include/GL/xmesa.h"
       - "/usr/local/GL/xmesa.h"
       - "/usr/include/GL/xmesa.h"
@@ -1800,12 +1866,13 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1837,12 +1904,13 @@ events:
     names:
       - "GL/glu.h"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/home/raed/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -1856,23 +1924,25 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/GL/glu.h"
-      - "/home/raed/bin/GL/glu.h"
-      - "/usr/local/bin/GL/glu.h"
-      - "/usr/bin/GL/glu.h"
       - "/usr/local/sbin/GL/glu.h"
+      - "/usr/local/bin/GL/glu.h"
       - "/usr/sbin/GL/glu.h"
+      - "/usr/bin/GL/glu.h"
+      - "/sbin/GL/glu.h"
+      - "/bin/GL/glu.h"
+      - "/var/lib/snapd/snap/bin/GL/glu.h"
       - "/usr/local/include/GL/glu.h"
       - "/usr/local/GL/glu.h"
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1904,11 +1974,12 @@ events:
     names:
       - "OpenGL"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -1920,23 +1991,25 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
     found: "/usr/lib64/libOpenGL.so"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1968,11 +2041,12 @@ events:
     names:
       - "GLX"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -1984,23 +2058,25 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
     found: "/usr/lib64/libGLX.so"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2032,11 +2108,12 @@ events:
     names:
       - "EGL"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -2048,23 +2125,25 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
     found: "/usr/lib64/libEGL.so"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2096,11 +2175,12 @@ events:
     names:
       - "GLESv2"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -2112,23 +2192,25 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
     found: "/usr/lib64/libGLESv2.so"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2161,11 +2243,12 @@ events:
       - "GLESv3"
       - "GLESv2"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -2177,11 +2260,12 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -2192,23 +2276,25 @@ events:
       - "/lib/"
       - "/opt/"
       - "/usr/lib64/X11/"
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
     found: "/usr/lib64/libGLESv2.so"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2241,11 +2327,12 @@ events:
       - "GLU"
       - "MesaGLU"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -2257,23 +2344,25 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
     found: "/usr/lib64/libGLU.so"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2306,11 +2395,12 @@ events:
       - "GL"
       - "MesaGL"
     candidate_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -2322,23 +2412,25 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/raed/.local/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
       - "/usr/local/sbin/"
+      - "/usr/local/bin/"
       - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
     found: "/usr/lib64/libGL.so"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2365,8 +2457,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-kH9XOG"
-      binary: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-kH9XOG"
+      source: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-bW4q9b"
+      binary: "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-bW4q9b"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
@@ -2376,19 +2468,19 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-kH9XOG'
+        Change Dir: '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-bW4q9b'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d36c2/fast
-        gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-kH9XOG'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_d36c2.dir/build.make CMakeFiles/cmTC_d36c2.dir/build
-        gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-kH9XOG'
-        Building C object CMakeFiles/cmTC_d36c2.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d36c2.dir/src.c.o -c "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-kH9XOG/src.c"
-        Linking C executable cmTC_d36c2
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d36c2.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_d36c2.dir/src.c.o -o cmTC_d36c2
-        gmake[2]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-kH9XOG'
-        gmake[1]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-kH9XOG'
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_96ac6/fast
+        gmake[1]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-bW4q9b'
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_96ac6.dir/build.make CMakeFiles/cmTC_96ac6.dir/build
+        gmake[2]: Entering directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-bW4q9b'
+        Building C object CMakeFiles/cmTC_96ac6.dir/src.c.o
+        /usr/sbin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_96ac6.dir/src.c.o -c "/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-bW4q9b/src.c"
+        Linking C executable cmTC_96ac6
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_96ac6.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_96ac6.dir/src.c.o -o cmTC_96ac6
+        gmake[2]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-bW4q9b'
+        gmake[1]: Leaving directory '/home/raed/Documents/dev/projects/inprogress or completed/Custom Video Encoding App/build/CMakeFiles/CMakeScratch/TryCompile-bW4q9b'
         
       exitCode: 0
   -
@@ -2450,46 +2542,6 @@ events:
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/raed/.local/glfw3Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/raed/.local/glfw3-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/raed/.local/lib64/cps/glfw3.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/raed/.local/lib/cps/glfw3.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/raed/.local/share/cps/glfw3.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/raed/glfw3Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/raed/glfw3-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/raed/lib64/cps/glfw3.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/raed/lib/cps/glfw3.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/raed/share/cps/glfw3.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
         path: "/usr/local/glfw3Config.cmake"
         mode: "config"
         reason: "no_exist"
@@ -2535,12 +2587,13 @@ events:
       version: "3.4.0"
     search_context:
       ENV{PATH}:
-        - "/home/raed/.local/bin"
-        - "/home/raed/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
         - "/usr/local/sbin"
+        - "/usr/local/bin"
         - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/snapd/snap/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"

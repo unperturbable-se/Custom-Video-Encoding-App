@@ -1,5 +1,6 @@
 #pragma once
 #include "imgui/imgui.h"
+#include "implot/implot.h"
 #include "imgui/backends/imgui_impl_glfw.h"
 #include "imgui/backends/imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
@@ -13,10 +14,11 @@ class Window
     Window()
     {
       glfwInit();
-      window=glfwCreateWindow(1280,720,"imGUI",NULL,NULL);
+      window=glfwCreateWindow(1280,720,"AVI/BMP Video Encoder",NULL,NULL);
       glfwMakeContextCurrent(window);
       glfwSwapInterval(1);
       ImGui::CreateContext();
+      ImPlot::CreateContext();
       ImGui_ImplGlfw_InitForOpenGL(window, true);
       ImGui_ImplOpenGL3_Init("#version 130");
 
@@ -26,6 +28,7 @@ class Window
       ImGui_ImplOpenGL3_Shutdown();
       ImGui_ImplGlfw_Shutdown();
       ImGui::DestroyContext();
+      ImPlot::DestroyContext();
       glfwDestroyWindow(window);
       glfwTerminate();
     }
@@ -36,7 +39,6 @@ class Window
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
-        ImGui::Begin("Window");
     }
 
     void endPolling()
@@ -52,7 +54,7 @@ class Window
     }
 
     void windowHandle();
-    void poll(bool separateThread=1)
+    void poll()
     {
         beginPolling();
         windowHandle();
@@ -65,13 +67,4 @@ class Window
 };
 
 
-void* guiMain(void*)
-{
-  Window window;
-  while (!glfwWindowShouldClose(window)) 
-  {
-      window.poll();
-      if(g_closeWindow)glfwSetWindowShouldClose(window, GLFW_TRUE);  
-  }
-  return NULL;
-}
+void* guiMain(void*);
