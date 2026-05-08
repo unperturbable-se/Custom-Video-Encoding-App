@@ -5,8 +5,10 @@
 bool g_closeWindow=false;
 int g_saves=0;
 bool g_abort_process=false;
+int g_num_threads=1;
 void ImageMaker_windowHandle();
 void ImageEncoder_windowHandle();
+void userToggleMenu_windowHandle();
 
 void* guiMain(void*)
 {
@@ -24,8 +26,12 @@ void Window::windowHandle()
 {
       ImGui::Begin("Image Creation");
       ImageMaker_windowHandle();
+      ImGui::End();
       ImGui::Begin("Image Encoding");
       ImageEncoder_windowHandle();
+      ImGui::End();
+      ImGui::Begin("Toggle Menu");
+      userToggleMenu_windowHandle();
       ImGui::End();
 }
 
@@ -86,5 +92,12 @@ void ImageEncoder_windowHandle()
     }
 
   //if(g_saves>=99 && progress>=1)g_closeWindow=true;
-  ImGui::End();  
+}
+
+
+void userToggleMenu_windowHandle()
+{
+    ImGui::Text("Number of threads being Used");
+    ImGui::SliderInt(" ",&g_num_threads,1,1000);
+    //if(ImGui::Button("Increase Threads")){g_num_threads++;}
 }

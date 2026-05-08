@@ -5,9 +5,12 @@
 #include <fcntl.h>
 #include <stdint.h>
 #include <stdlib.h>
+//#include <semaphore>
 
 extern int g_saves;
 extern bool g_abort_process;
+extern int g_num_threads;
+//extern sem_t g_threader;
 
 #pragma pack(1)
 
