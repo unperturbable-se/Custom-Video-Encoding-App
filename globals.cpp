@@ -7,3 +7,4 @@ int g_num_threads_w2=1;
 int g_num_threads_w3=1;
 int g_num_threads_w4=1;
 int g_num_threads_w5=1;
+int g_num_images=100;

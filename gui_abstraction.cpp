@@ -36,7 +36,7 @@ void ImageMaker_windowHandle()
 {
   static time_t start=time(NULL);
   int elapsed=static_cast<int>(difftime(time(NULL),start));
-  float progress=(float)g_saves/50;
+  float progress=(float)g_saves/g_num_images;
   static int images_saved[100];
   images_saved[elapsed]=g_saves;
   ImGui::Text("BMP Image Creation");
@@ -66,7 +66,7 @@ void ImageEncoder_windowHandle()
 {
   static time_t start=time(NULL);
   int elapsed=static_cast<int>(difftime(time(NULL),start));
-  float progress=(float)g_saves/200;
+  float progress=(float)g_saves/g_num_images;
   static int images_saved[100];
   images_saved[elapsed]=g_saves/2;
   ImGui::Text("Avi to bmp video encoding");

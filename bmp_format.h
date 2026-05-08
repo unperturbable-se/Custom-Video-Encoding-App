@@ -52,6 +52,7 @@ class BMP_Image
     Pixel* colourTable;
     uint8_t* buffer;
     public:
+    BMP_Image(){};
     BMP_Image(int width,int height):width{width},height{height}
     {
         img_size=width*height;
@@ -123,6 +124,11 @@ class BMP_Image
                   colourTable[index].green=0; 
                }
            }
+    }
+
+    uint8_t* getBuffer()
+    {
+        return buffer;
     }
 };
 

@@ -6,3 +6,4 @@ extern int g_num_threads_w2;
 extern int g_num_threads_w3;
 extern int g_num_threads_w4;
 extern int g_num_threads_w5;
+extern int g_num_images;

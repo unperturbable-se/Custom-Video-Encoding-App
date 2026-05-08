@@ -2,6 +2,6 @@
 .vscode
 build
 bmp_maker
-*.bmp
+*.avi
 imgui.ini
 bmp_images
