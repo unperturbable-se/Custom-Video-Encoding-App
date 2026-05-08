@@ -1,0 +1,24 @@
+RIFF ('AVI '
+      LIST ('hdrl'
+            'avih'(<Main AVI Header>)
+            LIST ('strl'
+                  'strh'(<Stream header>)
+                  'strf'(<Stream format>)
+                  [ 'strd'(<Additional header data>) ]
+                  [ 'strn'(<Stream name>) ]
+                  ...
+                 )
+             ...
+           )
+      LIST ('movi'
+            {SubChunk | LIST ('rec '
+                              SubChunk1
+                              SubChunk2
+                              ...
+                             )
+               ...
+            }
+            ...
+           )
+      ['idx1' (<AVI Index>) ]
+     )

@@ -16,6 +16,7 @@ add_executable(main
     imgui/backends/imgui_impl_opengl3.cpp
     implot/implot.cpp
     implot/implot_items.cpp
+    globals.cpp
     gui_abstraction.cpp
     main.cpp
 )

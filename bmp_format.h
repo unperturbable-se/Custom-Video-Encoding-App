@@ -5,11 +5,10 @@
 #include <fcntl.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
 //#include <semaphore>
-
-extern int g_saves;
-extern bool g_abort_process;
-extern int g_num_threads;
+#include "globals.h"
 //extern sem_t g_threader;
 
 #pragma pack(1)
@@ -45,9 +44,9 @@ typedef struct InfoHeader
   uint32_t colorsUsed;
   uint32_t colorsImportant;
 } InfoHeader;
+//#pragma pack(pop)
 
-
-class BMP_Image
+class BMP_Image    
 {
     int width,height,file_size,img_size;
     Pixel* colourTable;
@@ -56,7 +55,7 @@ class BMP_Image
     BMP_Image(int width,int height):width{width},height{height}
     {
         img_size=width*height;
-        file_size=54+4*img_size;
+        file_size=54+3*img_size;
         buffer=(uint8_t*)malloc(file_size);
         Header* h=(Header*)&buffer[0];
         InfoHeader* ih= (InfoHeader*)&buffer[14];
@@ -77,6 +76,21 @@ class BMP_Image
         (ih->yPixelsPerM)=height;
         (ih->colorsUsed)=255; //p
         (ih->colorsImportant)=0;
+    }
+
+    BMP_Image(char* fileName)
+    {
+        int fd=open(fileName,O_RDONLY);
+        struct stat st;
+        fstat(fd,&st);
+        buffer=(uint8_t*)mmap(NULL,st.st_size, PROT_READ, MAP_SHARED, fd, 0);
+        Header* h=(Header*)&buffer[0];
+        InfoHeader* ih= (InfoHeader*)&buffer[14];
+        colourTable=(Pixel*)&buffer[54];
+        file_size=(h->file_size);
+        width=(ih->xPixelsPerM);
+        height=(ih->yPixelsPerM);
+        img_size=(ih->imageSize);
     }
 
     void SaveFile(char* fileName)

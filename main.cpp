@@ -1,6 +1,7 @@
 #include <gui_abstraction.h>
 #include "bmp_format.h"
 #include <pthread.h>
+#include "globals.h"
 
 void createExpandingCircle();
 int main() 
@@ -8,7 +9,7 @@ int main()
     pthread_t thread;
     pthread_create(&thread,NULL,guiMain,NULL);
     createExpandingCircle();
-    pthread_join(thread,NULL);
+    pthread_join(thread,NULL); 
     return 0;
 }
 
@@ -25,7 +26,7 @@ void createExpandingCircle()
       BIM.makeCircle(radius);    
       BIM.SaveFile(fileName);
       radius+=1;
-      radius%=50;
+      //radius%=50;
       sleep(1);
     }
 }

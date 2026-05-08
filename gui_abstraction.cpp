@@ -2,10 +2,7 @@
 #include "bmp_format.h"
 #include <time.h>
 
-bool g_closeWindow=false;
-int g_saves=0;
-bool g_abort_process=false;
-int g_num_threads=1;
+
 void ImageMaker_windowHandle();
 void ImageEncoder_windowHandle();
 void userToggleMenu_windowHandle();
@@ -97,7 +94,11 @@ void ImageEncoder_windowHandle()
 
 void userToggleMenu_windowHandle()
 {
-    ImGui::Text("Number of threads being Used");
-    ImGui::SliderInt(" ",&g_num_threads,1,1000);
-    //if(ImGui::Button("Increase Threads")){g_num_threads++;}
+    ImGui::Text("Number of threads allocated");
+    ImGui::SliderInt("Worker 1",&g_num_threads_w1,1,100);
+    ImGui::SliderInt("Worker 2",&g_num_threads_w2,1,100);
+    ImGui::SliderInt("Worker 3",&g_num_threads_w3,1,100);
+    ImGui::SliderInt("Worker 4",&g_num_threads_w4,1,100);
+    ImGui::SliderInt("Worker 5",&g_num_threads_w5,1,100);
+    
 }

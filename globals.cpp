@@ -1,0 +1,9 @@
+#include "globals.h"
+bool g_closeWindow=false;
+int g_saves=0;
+bool g_abort_process=false;
+int g_num_threads_w1=1;
+int g_num_threads_w2=1;
+int g_num_threads_w3=1;
+int g_num_threads_w4=1;
+int g_num_threads_w5=1;
