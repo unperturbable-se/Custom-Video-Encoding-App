@@ -31,7 +31,7 @@ void createExpandingCircle()
       BIM.SaveFile(fileName);
       radius+=1;
       //radius%=50;
-      sleep(1);
+      //sleep(1);
     }
 }
 
@@ -42,15 +42,16 @@ void extractImages()
     char fileName[30];
     for(int i=0;i<g_num_images;i++)
     {
-        printf("%d",i);
+        //printf("%d",i);
         sprintf(fileName,"bmp_images/%d.bmp",i);
-        printf("%d",i);
+        //printf("%d",i);
         //printf("\n%s being created",fileName);
         arr[i]=new BMP_Image(fileName);
-        printf("%d",i);
+        //printf("%d",i);
         buffers[i]=arr[i]->getBuffer();
     }
-    aviConverter(buffers,g_num_images,100,100,"hello.avi");
+    Avi_Video vid(buffers,g_num_images,100,100);
+    vid.saveFile("yolo.avi");
     for(int i=0;i<100;i++)delete arr[i];
 
 }
