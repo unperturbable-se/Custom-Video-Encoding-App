@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/mman.h>
-//#include <semaphore>
+#include <semaphore>
 #include "globals.h"
 //extern sem_t g_threader;
 
@@ -48,10 +48,10 @@ typedef struct InfoHeader
 
 class BMP_Image    
 {
+    public:
     int width,height,file_size,img_size;
     Pixel* colourTable;
     uint8_t* buffer;
-    public:
     BMP_Image(){};
     BMP_Image(int width,int height):width{width},height{height}
     {
@@ -79,7 +79,7 @@ class BMP_Image
         (ih->colorsImportant)=0;
     }
 
-    BMP_Image(char* fileName)
+    BMP_Image(const char* fileName)
     {
         int fd=open(fileName,O_RDONLY);
         struct stat st;
@@ -96,7 +96,7 @@ class BMP_Image
 
     void SaveFile(char* fileName)
     {
-    int file=open(fileName,O_WRONLY|O_CREAT,0666);
+    int file=open(fileName,O_WRONLY|O_CREAT);
     write(file,buffer,file_size);
     close(file);
     g_saves++;
@@ -124,11 +124,6 @@ class BMP_Image
                   colourTable[index].green=0; 
                }
            }
-    }
-
-    uint8_t* getBuffer()
-    {
-        return buffer;
     }
 };
 

@@ -8,3 +8,5 @@ int g_num_threads_w3=1;
 int g_num_threads_w4=1;
 int g_num_threads_w5=1;
 int g_num_images=100;
+int g_images_processed=0;
+pthread_mutex_t g_images_processed_lock;

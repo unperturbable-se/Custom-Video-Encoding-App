@@ -17,3 +17,6 @@ bmp:
 	./bmp_maker
 	read
 	rm bmp_maker
+permission:
+	chmod 777 -R bmp_images/*
+	chmod 777 *.avi

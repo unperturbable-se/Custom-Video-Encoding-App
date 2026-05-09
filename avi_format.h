@@ -70,11 +70,13 @@ typedef struct
 
 class Avi_Video
 {
+    bool memory_mapped;
     public:
     uint8_t* buffer;
     int bufferSize;
-    Avi_Video(char* fileName)
+    Avi_Video(const char* fileName)
     {
+        memory_mapped=true;
         int fd=open(fileName,O_RDONLY);
         struct stat st;
         fstat(fd,&st);
@@ -83,6 +85,7 @@ class Avi_Video
     }
     Avi_Video(uint8_t** videoFrames, int frameCount, int imageWidth, int imageHeight)
     {
+        memory_mapped=false;
         int rowStride = ((imageWidth * 3) + 3) & ~3;
         int frameSizeBytes = rowStride * imageHeight;
         bufferSize = sizeof(ListChunk) + sizeof(ListChunk) + sizeof(Chunk) + sizeof(AviMainHeader)
@@ -194,11 +197,36 @@ class Avi_Video
         }
     }
 
-    void saveFile(char* fileName)
+    uint8_t** decode(int* frameCount, int* imageWidth, int* imageHeight)
+    {
+        AviMainHeader* hdr = (AviMainHeader*)&buffer[32];
+        *frameCount = hdr->totalFrames;
+        *imageWidth = hdr->videoWidth;
+        *imageHeight = hdr->videoHeight;
+        int rowStride = ((*imageWidth * 3) + 3) & ~3;
+
+        uint8_t** frames = (uint8_t**)malloc(*frameCount * sizeof(uint8_t*));
+        for (int i = 0; i < *frameCount; i++)
+            frames[i] = (uint8_t*)malloc(*imageWidth * *imageHeight * 3);
+
+        int off = 224;
+        for (int f = 0; f < *frameCount; f++)
+        {
+            Chunk* fc = (Chunk*)&buffer[off];
+            off += sizeof(Chunk);
+            uint8_t* src = &buffer[off];
+            for (int y = *imageHeight - 1; y >= 0; y--)
+                memcpy(frames[f] + y * *imageWidth * 3, src + (*imageHeight - 1 - y) * rowStride, *imageWidth * 3);
+            off += fc->ChunkSize;
+        }
+        return frames;
+    }
+
+    void saveFile(const char* fileName)
     {
         int fd=open(fileName,O_CREAT|O_RDWR,0666);
         write(fd,(void*)buffer,bufferSize);
         close(fd);
     }
-    ~Avi_Video(){delete[] buffer;}
+    ~Avi_Video(){if(memory_mapped)munmap(buffer,bufferSize); else free(buffer);}
 };

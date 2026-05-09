@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 project(ImGuiApp)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG "-g3 -O0")
+set(CMAKE_C_FLAGS_DEBUG "-g3 -O0")
 
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
