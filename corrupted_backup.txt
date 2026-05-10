@@ -1,0 +1,398 @@
+//main.cpp
+#include "gui_abstraction.h"
+#include "bmp_format.h"
+#include "avi_format.h"
+#include <pthread.h>
+#include "globals.h"
+#include <stdio.h>
+#include <functional>
+
+void* BmpToAvi(void*);
+void* AviToBmp(void*);
+void* createExpandingCircle(void*);
+void threadScheduler(int processNum,void*fptr(void*));
+int main()
+{
+pthread_t thread;
+pthread_mutex_init(&g_images_created_lock,NULL);
+pthread_mutex_init(&g_images_decoded_lock,NULL);
+pthread_mutex_init(&g_images_encoded_lock,NULL);
+pthread_create(&thread,NULL,guiMain,NULL);
+threadScheduler(0,createExpandingCircle);
+threadScheduler(1,BmpToAvi);
+threadScheduler(2,AviToBmp);
+pthread_join(thread,NULL);
+return 0;
+}
+
+void threadScheduler(int processNum,void*fptr(void*))
+{
+pthread_t threads[100];
+for(int i=0;i<100;i++)
+{
+pthread_create(&threads[i],NULL,fptr,NULL);
+}
+for(int i=0;i<100;i++)pthread_join(threads[i],NULL);
+}
+
+
+void* createExpandingCircle(void*)
+{
+
+static BMP_Image BIM(100,100);
+static int radius=0;
+char fileName[30];
+pthread_mutex_lock(&g_images_created_lock);
+for(int i=g_images_created;i<g_total_images&& !g_abort_process;i=g_images_created++)
+{
+BIM.makeCircle(radius++);
+sprintf(fileName,"bmp_images/%d.bmp",i);
+BIM.SaveFile(fileName);
+pthread_mutex_unlock(&g_images_created_lock);
+printf("\n%s being created",fileName);
+pthread_mutex_lock(&g_images_created_lock);
+}
+pthread_mutex_unlock(&g_images_created_lock);
+return NULL;
+}
+
+void* BmpToAvi(void*)
+{
+static BMP_Image** arr = new BMP_Image*[g_total_images];
+static uint8_t** buffers=new uint8_t*[g_total_images];
+static bool saved=false;
+char fileName[30];
+for(int i=g_images_encoded+0*pthread_mutex_lock(&g_images_encoded_lock);g_images_encoded<g_total_images;i=g_images_encoded++)
+{
+sprintf(fileName,"bmp_images/%d.bmp",i);
+arr[i]=new BMP_Image(fileName);
+buffers[i]=arr[i]->buffer;
+pthread_mutex_unlock(&g_images_encoded_lock);
+}
+pthread_mutex_lock(&g_images_encoded_lock);
+if(saved)return NULL;
+saved=true;
+pthread_mutex_unlock(&g_images_encoded_lock);
+Avi_Video vid(buffers,g_total_images,100,100);
+
+vid.saveFile("yolo.avi");
+saved=true;
+for(int i=0;i<100;i++)delete arr[i];
+return NULL;
+}
+
+void* AviToBmp(void*)
+{
+static Avi_Video vid("hello.avi");
+static int numFrames=0,width=100,height=100;
+static uint8_t** frames=vid.decode(&numFrames,&width,&height);
+if(g_total_images>=numFrames)return NULL;
+BMP_Image img(width,height);
+char fileName[30];
+//printf("\nNum frames:%d width:%d height: %d",numFrames,width,height);
+pthread_mutex_lock(&g_images_decoded_lock);
+for(int i=g_images_decoded;i<numFrames && !g_abort_process;i=g_images_decoded++)
+{
+memcpy(img.colourTable,frames[i],3*width*height);
+pthread_mutex_unlock(&g_images_decoded_lock);
+sprintf(fileName,"bmp_images/%d.bmp",i);
+img.SaveFile(fileName);
+pthread_mutex_lock(&g_images_decoded_lock);
+}
+pthread_mutex_unlock(&g_images_decoded_lock);
+return NULL;
+}
+
+
+
+
+
+
+
+
+//globals.h
+
+#pragma once
+#include <pthread.h>
+extern bool g_closeWindow;
+extern bool g_abort_process;
+extern int g_total_images;
+extern int g_images_created;
+extern int g_images_encoded;
+extern int g_images_decoded;
+extern pthread_mutex_t g_images_created_lock;
+extern pthread_mutex_t g_images_encoded_lock;
+extern pthread_mutex_t g_images_decoded_lock;
+extern int g_num_threads;
+
+//globals.cpp
+
+#include "globals.h"
+bool g_closeWindow=false;
+bool g_abort_process=false;
+int g_total_images=100;
+int g_images_created=1;
+int g_images_encoded=1;
+int g_images_decoded=1;
+pthread_mutex_t g_images_created_lock;
+pthread_mutex_t g_images_encoded_lock;
+pthread_mutex_t g_images_decoded_lock;
+int g_num_threads=0;
+
+//gui_abstraction.cpp
+
+#include <gui_abstraction.h>
+#include "bmp_format.h"
+#include <time.h>
+
+
+void ImageMaker_windowHandle();
+void ImageEncoder_windowHandle();
+void ImageDecoder_windowHandle();
+void userToggleMenu_windowHandle();
+
+void* guiMain(void*)
+{
+Window window;
+while (!glfwWindowShouldClose(window))
+{
+window.poll();
+if(g_closeWindow)glfwSetWindowShouldClose(window, GLFW_TRUE);
+}
+g_abort_process=true;
+return NULL;
+}
+
+void Window::windowHandle()
+{
+ImGui::Begin("Image Creation");
+ImageMaker_windowHandle();
+ImGui::End();
+ImGui::Begin("Image Encoding");
+ImageEncoder_windowHandle();
+ImGui::End();
+ImGui::Begin("Image Encoding");
+ImageDecoder_windowHandle();
+ImGui::End();
+ImGui::Begin("Toggle Menu");
+userToggleMenu_windowHandle();
+ImGui::End();
+}
+
+void ImageMaker_windowHandle()
+{
+static time_t start=time(NULL);
+int elapsed=static_cast<int>(difftime(time(NULL),start));
+float progress=(float)g_images_created/g_total_images;
+static int images_saved[100];
+images_saved[elapsed]=g_images_created;
+ImGui::Text("BMP Image Creation");
+if (ImGui::Button("Abort Process")) {g_abort_process=true;g_closeWindow=true;}
+//if(g_saves>=99 && progress>=1)g_closeWindow=true;
+}
+
+
+
+void ImageEncoder_windowHandle()
+{
+static time_t start=time(NULL);
+int elapsed=static_cast<int>(difftime(time(NULL),start));
+float progress=(float)g_images_encoded/g_total_images;
+static int images_saved[100];
+images_saved[elapsed]=g_images_encoded/2;
+ImGui::Text("bmp to avi video encoding");
+if (ImGui::Button("Abort Process")){ g_abort_process=true;g_closeWindow=true;}
+
+
+ImGui::Text("Encoding progress:");
+ImGui::ProgressBar(progress);
+ImGui::SameLine();
+ImGui::Text("%.1f%%", progress * 50.0f);
+ImGui::SameLine();
+ImGui::Text("Progress:%.2f\%",progress*50);
+
+ImPlot::SetNextAxesLimits(0,100,0,50);
+if(ImPlot::BeginPlot("image encoding progress"))
+{
+//ImPlot::PlotHistogram2D("Images encoded,")
+ImPlot::PlotLine("num images encoded",images_saved,elapsed);
+ImPlot::EndPlot();
+}
+
+//if(g_saves>=99 && progress>=1)g_closeWindow=true;
+}
+
+void ImageDecoder_windowHandle()
+{
+static time_t start=time(NULL);
+int elapsed=static_cast<int>(difftime(time(NULL),start));
+float progress=(float)g_images_decoded/g_total_images;
+static int images_saved[100];
+images_saved[elapsed]=g_images_decoded/2;
+ImGui::Text("avi to bmp video decoding");
+if (ImGui::Button("Abort Process")){ g_abort_process=true;g_closeWindow=true;}
+
+
+ImGui::Text("decoding progress:");
+ImGui::ProgressBar(progress);
+ImGui::SameLine();
+ImGui::Text("%.1f%%", progress * 50.0f);
+ImGui::SameLine();
+ImGui::Text("Progress:%.2f\%",progress*50);
+
+ImPlot::SetNextAxesLimits(0,100,0,50);
+if(ImPlot::BeginPlot("image decoding progress"))
+{
+//ImPlot::PlotHistogram2D("Images encoded,")
+ImPlot::PlotLine("num images decoded",images_saved,elapsed);
+ImPlot::EndPlot();
+}
+
+
+}
+
+
+void userToggleMenu_windowHandle()
+{
+ImGui::Text("Number of threads allocated");
+//ImGui::SliderInt("Worker 1",&g_num_threads_w1,1,100);
+//ImGui::SliderInt("Worker 2",&g_num_threads_w2,1,100);
+//ImGui::SliderInt("Worker 3",&g_num_threads_w3,1,100);
+//ImGui::SliderInt("Worker 4",&g_num_threads_w4,1,100);
+//ImGui::SliderInt("Worker 5",&g_num_threads_w5,1,100);
+
+}
+
+
+//bmp_format.h
+
+#pragma once
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <fcntl.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <semaphore>
+#include "globals.h"
+//extern sem_t g_threader;
+
+#pragma pack(1)
+
+typedef struct Pixel
+{
+uint8_t blue;
+uint8_t green;
+uint8_t red;
+//uint8_t reserved;
+} Pixel;
+
+
+typedef struct Header
+{
+uint8_t signature[2];
+uint32_t file_size;
+uint32_t reserved;
+uint32_t data_offset;
+} Header;
+
+typedef struct InfoHeader
+{
+uint32_t size;
+uint32_t width;
+uint32_t height;
+uint16_t planes;
+uint16_t bitCount;
+uint32_t Compression;
+uint32_t imageSize;
+uint32_t xPixelsPerM;
+uint32_t yPixelsPerM;
+uint32_t colorsUsed;
+uint32_t colorsImportant;
+} InfoHeader;
+//#pragma pack(pop)
+
+class BMP_Image
+{
+public:
+int width,height,file_size,img_size;
+Pixel* colourTable;
+uint8_t* buffer;
+BMP_Image(){};
+BMP_Image(int width,int height):width{width},height{height}
+{
+img_size=width*height;
+file_size=54+3*img_size;
+buffer=(uint8_t*)malloc(file_size);
+Header* h=(Header*)&buffer[0];
+InfoHeader* ih= (InfoHeader*)&buffer[14];
+colourTable=(Pixel*)&buffer[54];
+(h->signature)[0]='B';
+(h->signature)[1]='M';
+(h->file_size)=file_size;
+(h->data_offset)=sizeof(Header)+sizeof(InfoHeader); //placeholder
+
+(ih->size)= sizeof(InfoHeader);
+(ih->width)=width;
+(ih->height)=height;
+(ih->planes)=1;
+(ih->bitCount)=24; //bits per pixel
+(ih->Compression)=0;
+(ih->imageSize)=img_size;
+(ih->xPixelsPerM)=width;
+(ih->yPixelsPerM)=height;
+(ih->colorsUsed)=255; //p
+(ih->colorsImportant)=0;
+}
+
+BMP_Image(const char* fileName)
+{
+int fd=open(fileName,O_RDONLY);
+struct stat st;
+fstat(fd,&st);
+buffer=(uint8_t*)mmap(NULL,st.st_size, PROT_READ, MAP_SHARED, fd, 0);
+Header* h=(Header*)&buffer[0];
+InfoHeader* ih= (InfoHeader*)&buffer[14];
+colourTable=(Pixel*)&buffer[54];
+file_size=(h->file_size);
+width=(ih->xPixelsPerM);
+height=(ih->yPixelsPerM);
+img_size=(ih->imageSize);
+}
+
+void SaveFile(char* fileName)
+{
+int file=open(fileName,O_WRONLY|O_CREAT);
+write(file,buffer,file_size);
+close(file);
+//g_saves++;
+}
+
+void makeCircle(int radius)
+{
+for(int y=0;y<width;y++)
+for(int x=0;x<height;x++)
+{
+int index=x*width+y;
+int x_transformed=x-0;
+int y_transformed=y-0;
+int res=x_transformed*x_transformed+y_transformed*y_transformed;
+if((res)<radius*radius)
+{
+colourTable[index].blue=255;
+colourTable[index].red=0;
+colourTable[index].green=0;
+}
+else
+{
+colourTable[index].blue=0;
+colourTable[index].red=255;
+colourTable[index].green=0;
+}
+}
+}
+};
+
+
