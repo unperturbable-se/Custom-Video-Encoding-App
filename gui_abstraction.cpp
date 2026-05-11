@@ -52,7 +52,8 @@ void ImageMaker_windowHandle()
 {
   static time_t start=time(NULL);
   int elapsed=static_cast<int>(difftime(time(NULL),start));
-  float progress=(float)g_images_created/g_num_images;
+  pthread_mutex_lock(&g_images_created_lock);
+  float progress=(float)g_saves/g_num_images;
   static int images_saved[100];
   images_saved[elapsed]=g_saves;
   ImGui::Text("BMP Image Creation");
@@ -66,13 +67,13 @@ void ImageMaker_windowHandle()
   ImGui::SameLine();
   ImGui::Text("Progress:%.2f\%",progress*100);
 
-  ImPlot::SetNextAxesLimits(0,100,0,50);
+  ImPlot::SetNextAxesLimits(0,10,0,300);
   if(ImPlot::BeginPlot("image creation progress"))
     {
       ImPlot::PlotLine("num images created",images_saved,elapsed);
       ImPlot::EndPlot();
     }
-
+    pthread_mutex_unlock(&g_images_created_lock);
   //if(g_saves>=99 && progress>=1)g_closeWindow=true;  
 }
 
@@ -82,9 +83,10 @@ void ImageEncoder_windowHandle()
 {
   static time_t start=time(NULL);
   int elapsed=static_cast<int>(difftime(time(NULL),start));
+  pthread_mutex_lock(&g_images_encoded_lock);
   float progress=(float)g_images_encoded/g_num_images;
   static int images_saved[100];
-  images_saved[elapsed]=g_images_encoded/2;
+  images_saved[elapsed]=g_images_encoded;
   ImGui::Text("bmp to avi video encoding");
   if (ImGui::Button("Abort Process")){ g_abort_process=true;g_closeWindow=true;}
 
@@ -96,14 +98,14 @@ void ImageEncoder_windowHandle()
   ImGui::SameLine();
   ImGui::Text("Progress:%.2f\%",progress*50);
 
-  ImPlot::SetNextAxesLimits(0,100,0,50);
+  ImPlot::SetNextAxesLimits(0,10,0,300);
   if(ImPlot::BeginPlot("image encoding progress"))
     {
       //ImPlot::PlotHistogram2D("Images encoded,")
       ImPlot::PlotLine("num images encoded",images_saved,elapsed);
       ImPlot::EndPlot();
     }
-
+    pthread_mutex_unlock(&g_images_encoded_lock);
   //if(g_saves>=99 && progress>=1)g_closeWindow=true;
 }
 
@@ -111,6 +113,7 @@ void ImageDecoder_windowHandle()
 {
   static time_t start=time(NULL);
   int elapsed=static_cast<int>(difftime(time(NULL),start));
+  pthread_mutex_lock(&g_images_decoded_lock);
   float progress=(float)g_images_decoded/g_num_images;
   static int images_saved[100];
   images_saved[elapsed]=g_images_decoded;
@@ -125,14 +128,14 @@ void ImageDecoder_windowHandle()
   ImGui::SameLine();
   ImGui::Text("Progress:%.2f\%",progress*50);
   //g_images_decoded++;
-  ImPlot::SetNextAxesLimits(0,100,0,50);
+  ImPlot::SetNextAxesLimits(0,10,0,300);
   if(ImPlot::BeginPlot("image decoding progress"))
     {
       //ImPlot::PlotHistogram2D("Images encoded,")
       ImPlot::PlotLine("num images decoded",images_saved,elapsed);
       ImPlot::EndPlot();
     }
-
+    pthread_mutex_unlock(&g_images_decoded_lock);
   //if(g_saves>=99 && progress>=1)g_closeWindow=true;
 }
 
