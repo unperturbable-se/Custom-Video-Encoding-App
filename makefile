@@ -12,11 +12,7 @@ rpm:
 	sudo dnf install mesa-libGL-devel mesa-libGLU-devel
 apt:
 	sudo apt install g++ cmake libglfw3-dev libgl1-mesa-dev
-bmp:
-	g++ bmp_maker.cpp -o bmp_maker
-	./bmp_maker
-	read
-	rm bmp_maker
+
 permission:
 	chmod 777 -R bmp_images/*
 	chmod 777 *.avi

@@ -1,33 +1,41 @@
 # Video Conversion Pipeline
 
-High-performance BMP to AVI converter using a multi-process and multi-threaded architecture.
+A high-performance BMP ↔ AVI converter built on a multi-threaded pipeline architecture.
+
+**Demo:** https://youtu.be/ld9ht4Y3uJQ
+
+![App Screenshot](screenshots/video_encoding_app.png)
 
 ## Features
 
-- **Parallel Encoding:** Multi-process workload with internal pthread synchronization.
-- **Shared Memory:** Uses `mmap` and mutexes for high-speed frame buffering.
-- **Bi-directional:** Supports BMP ↔ AVI conversion.
-- **MiniApp:** Real-time UI for monitoring process status and FPS.
+- **Parallel Encoding** — Multi-threaded workload with pthread synchronization
+- **Shared Memory** — `mmap` and mutexes for high-speed frame buffering
+- **Bi-directional** — BMP → AVI and AVI → BMP conversion
+- **Real-time UI** — Live process monitoring and FPS display via ImGui
 
-## How to Run
+## Setup
 
-### First-time setup
+This repo uses ImGui and ImPlot as submodules. After cloning, initialize them:
 
-For the first instance, you need to set up dependencies:
-- If you are on Ubuntu, run `make apt`.
-- If you are on Fedora, run `make rpm`.
+```bash
+git submodule update --init --recursive
+```
 
-After that, run `make all`.
+Install dependencies (run once):
 
-### Editing and running
+```bash
+make apt   # Ubuntu/Debian
+make rpm   # Fedora
+```
 
-Now you’re good to go. Whenever you make changes to the code, you can test the program by running:
+Then build:
+
+```bash
+make all
+```
+
+## Usage
 
 ```bash
 make test
-```
-You can also test the BMP tester code by running:
-
-```bash
-make bmp
 ```
