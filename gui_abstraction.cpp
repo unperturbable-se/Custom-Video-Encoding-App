@@ -22,21 +22,21 @@ void* guiMain(void*)
 
 void Window::windowHandle()
 {
-      if(!g_start_creating)
+      if(g_start_creating)
       {
         ImGui::Begin("Image Creation");
         ImageMaker_windowHandle();
         ImGui::End();
       }
 
-      if(!g_start_encoding)
+      if(g_start_encoding)
       {
         ImGui::Begin("Image Encoding");
         ImageEncoder_windowHandle();
         ImGui::End();
       }
 
-      if(!g_start_decoding)
+      if(g_start_decoding)
       {
         ImGui::Begin("Image Decoding");
         ImageDecoder_windowHandle();
@@ -124,7 +124,7 @@ void ImageDecoder_windowHandle()
   ImGui::Text("%.1f%%", progress * 50.0f);
   ImGui::SameLine();
   ImGui::Text("Progress:%.2f\%",progress*50);
-
+  //g_images_decoded++;
   ImPlot::SetNextAxesLimits(0,100,0,50);
   if(ImPlot::BeginPlot("image decoding progress"))
     {
@@ -144,7 +144,10 @@ void userToggleMenu_windowHandle()
     ImGui::SliderInt("Worker 2",&g_num_threads[1],2,100);
     ImGui::SliderInt("Worker 3",&g_num_threads[2],2,100);  
 
-    g_start_creating=ImGui::Button("Start Image Creation");
-    g_start_encoding=ImGui::Button("Start Image Encoding");
-    g_start_decoding=ImGui::Button("Start Video Decoding");
+    //g_start_creating=ImGui::Button("Start Image Creation");
+    //g_start_encoding=ImGui::Button("Start Image Encoding");
+    //g_start_decoding=ImGui::Button("Start Video Decoding");
+    if(ImGui::RadioButton("Start Image Creation",g_start_creating==0)){g_start_creating=1;}
+    if(ImGui::RadioButton("Start Video Encoding",g_start_encoding==0)){g_start_encoding=1;}
+    if(ImGui::RadioButton("Start Video Decoding",g_start_decoding==0)){g_start_decoding=1;}
 }

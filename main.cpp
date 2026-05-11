@@ -15,10 +15,13 @@ int main()
     pthread_t thread;
     pthread_create(&thread,NULL,guiMain,NULL);
     pthread_mutex_init(&g_images_decoded_lock,NULL);
+    pthread_mutex_init(&g_images_created_lock,NULL);
+    pthread_mutex_init(&g_images_encoded_lock,NULL);
     threadScheduler(0,createExpandingCircle);
-    //threadScheduler(1,BmpToAvi);
-    BmpToAvi(NULL);
+    threadScheduler(1,BmpToAvi);
+    //BmpToAvi(NULL);
     threadScheduler(2,AviToBmp);
+    //AviToBmp(NULL);
     pthread_join(thread,NULL);
     return 0;
 }
@@ -39,14 +42,18 @@ void* createExpandingCircle(void*)
     BMP_Image BIM(100,100);
     int radius=0;
     char fileName[30];
+    pthread_mutex_lock(&g_images_created_lock);
     for(int i=++g_images_created;i<g_num_images&&!g_abort_process;i=++g_images_created)
     {
+      pthread_mutex_unlock(&g_images_created_lock);
       sprintf(fileName,"bmp_images/%d.bmp",i);
       printf("\n%s being created",fileName);
       BIM.makeCircle(radius);    
       BIM.SaveFile(fileName);
       radius+=1;
+      pthread_mutex_lock(&g_images_created_lock);
     }
+    pthread_mutex_unlock(&g_images_created_lock);
     return NULL;
 }
 
@@ -57,8 +64,10 @@ void* BmpToAvi(void*)
     static int saved=false;
     while(!g_start_encoding)continue;
     char fileName[30];
+    pthread_mutex_lock(&g_images_encoded_lock);
     for(int i=++g_images_encoded;i<g_num_images&&!g_abort_process;i=++g_images_encoded)
     {
+        pthread_mutex_unlock(&g_images_encoded_lock);
         //printf("%d",i);
         sprintf(fileName,"bmp_images/%d.bmp",i);
         //printf("%d",i);
@@ -66,7 +75,9 @@ void* BmpToAvi(void*)
         arr[i]=new BMP_Image(fileName);
         //printf("%d",i);
         buffers[i]=arr[i]->buffer;
+        pthread_mutex_lock(&g_images_encoded_lock);
     }
+    pthread_mutex_unlock(&g_images_encoded_lock);
     if(saved)return NULL;
     saved=true;
     Avi_Video vid(buffers,g_num_images,100,100);
@@ -78,23 +89,25 @@ void* BmpToAvi(void*)
 void* AviToBmp(void*)
 {
     static Avi_Video vid("yolo.avi");
-    static int numFrames,width,height;
+    static int numFrames=100,width,height;
     static uint8_t** frames=vid.decode(&numFrames,&width,&height);
+    //numFrames=100,width=100,height=100;
     while(!g_start_decoding)continue;
     if(g_images_decoded>=numFrames)return NULL;
     BMP_Image img(width,height);
     char fileName[30];
     //printf("\nNum frames:%d  width:%d height: %d",numFrames,width,height);
     pthread_mutex_lock(&g_images_decoded_lock);
-    for(int i=g_images_encoded;i<numFrames && !g_abort_process;i=g_images_encoded++)
+    for(int i=++g_images_decoded;i<numFrames && !g_abort_process;i=++g_images_decoded)
     {
         pthread_mutex_unlock(&g_images_decoded_lock);
         pthread_mutex_lock(&g_images_decoded_lock);
-        //sleep(1);
+        sleep(1);
         sprintf(fileName,"bmp_images/%d.bmp",i);
         printf("\n%s being decoded",fileName);
         memcpy(img.colourTable,frames[i],3*width*height);
         img.SaveFile(fileName);
+        g_images_decoded++;
         //sleep(1);
     }
     pthread_mutex_unlock(&g_images_decoded_lock); 
